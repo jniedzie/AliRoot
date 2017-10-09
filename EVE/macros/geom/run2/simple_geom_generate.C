@@ -91,11 +91,11 @@ void simple_geom_generate(char *detectorName="", int runNumber=0)
     TEveManager::Create();
     
     // load config file
-    TEnv settings;
-    AliEveInit::GetConfig(&settings);
-    
+//    TEnv *settings;
+//    AliEveInit::GetConfig(settings);
+  
     // set OCDB path from config and set run number for which we want to generate geometry
-    AliCDBManager::Instance()->SetDefaultStorage(settings.GetValue("OCDB.default.path","local://$ALICE_ROOT/../src/OCDB"));
+    AliCDBManager::Instance()->SetDefaultStorage("local:///local/cdb/");
     AliCDBManager::Instance()->SetRun(runNumber);
     
     // load geometry from OCDB
