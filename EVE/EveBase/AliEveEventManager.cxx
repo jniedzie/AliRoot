@@ -399,7 +399,8 @@ void AliEveEventManager::SetCurrentRun(int run)
     if(run != fCurrentRun)
     {
         fCurrentRun = run;
-        AliEveEventManagerWindow::GetInstance()->SetActiveTriggerClasses();
+      // this may cause crashes in P2
+//        AliEveEventManagerWindow::GetInstance()->SetActiveTriggerClasses();
     }
 }
 
